@@ -30,6 +30,8 @@ export const dataReducer = (state, action) => {
         ...state,
         products: [...action.payload],
       };
+    default:
+      return state;
   }
 };
 
@@ -40,6 +42,7 @@ export const filtersReducer = (state, action) => {
       return { ...state, searchQuery: action.payload };
     case POPULATE_FILTER_PARAMS:
       return { ...state, filterParams: action.payload };
+    default:
+      return state;
   }
-  return state;
 };

@@ -59,7 +59,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Header() {
   const pathname = useLocation().pathname.split('/')[1];
   const navigate = useNavigate();
-  console.log(TeeRexState());
 
   const { state, filtersDispatch } = TeeRexState();
   /**
