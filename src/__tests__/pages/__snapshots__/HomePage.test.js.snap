@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomePage /> to match snapshot 1`] = `
+<div
+  class="MuiContainer-root MuiContainer-maxWidthXl css-19r6kue-MuiContainer-root"
+>
+  <div
+    class="css-czq8sk-MuiStack-root"
+  >
+    <div>
+      Filters
+    </div>
+    <hr
+      class="MuiDivider-root MuiDivider-fullWidth MuiDivider-vertical MuiDivider-flexItem css-1tk1bks-MuiDivider-root"
+    />
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 MuiGrid-grid-lg-2 css-1pgzwh3-MuiGrid-root"
+        data-testid="test-product-item"
+      >
+        <div
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1odlhgd-MuiPaper-root"
+        >
+          <div>
+            https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/polo-tshirts.png
+          </div>
+          <div
+            class="css-5z1x7y-MuiStack-root"
+          >
+            <div>
+              250
+            </div>
+            <div>
+              Black Polo
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 MuiGrid-grid-lg-2 css-1pgzwh3-MuiGrid-root"
+        data-testid="test-product-item"
+      >
+        <div
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1odlhgd-MuiPaper-root"
+        >
+          <div>
+            https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/polo-tshirts.png
+          </div>
+          <div
+            class="css-5z1x7y-MuiStack-root"
+          >
+            <div>
+              250
+            </div>
+            <div>
+              Red Polo
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 MuiGrid-grid-lg-2 css-1pgzwh3-MuiGrid-root"
+        data-testid="test-product-item"
+      >
+        <div
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1odlhgd-MuiPaper-root"
+        >
+          <div>
+            https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/polo-tshirts.png
+          </div>
+          <div
+            class="css-5z1x7y-MuiStack-root"
+          >
+            <div>
+              250
+            </div>
+            <div>
+              Blue Polo
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

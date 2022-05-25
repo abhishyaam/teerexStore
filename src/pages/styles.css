@@ -1,0 +1,42 @@
+/* Css Styles required for pages of the application */
+.home-page {
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+
+.products-container {
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: dodgerblue;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  color: #ededed;
+}
+
+.link {
+  width: 2em;
+  color: inherit;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.store-name {
+  text-decoration: none;
+  color: inherit;
+}
+
+.searchbox {
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid #ededed;
+  padding-bottom: 0.1em;
+  color: inherit;
+  width: 25vw;
+}
