@@ -6,13 +6,43 @@ import './styles.css';
 
 const HomePage = () => {
   const {
-    state: { products },
-    filtersState: { searchQuery },
+    state: { products } = {},
+    filtersState: {
+      searchQuery,
+      colorsFilter,
+      typesFilter,
+      gendersFilter,
+      pricesFilter,
+    } = {},
   } = TeeRexState();
 
   const filterProducts = () => {
     let filteredProducts = products;
-    if (searchQuery && searchQuery.length > 2) {
+    if (colorsFilter?.length > 0) {
+      filteredProducts = products.filter(({ color }) =>
+        colorsFilter.includes(color)
+      );
+    }
+
+    if (typesFilter?.length > 0) {
+      filteredProducts = products.filter(({ type }) =>
+        typesFilter.includes(type)
+      );
+    }
+
+    if (gendersFilter?.length > 0) {
+      filteredProducts = products.filter(({ gender }) =>
+        gendersFilter.includes(gender)
+      );
+    }
+
+    if (pricesFilter?.length > 0) {
+      filteredProducts = products.filter(
+        ({ price }) => price >= pricesFilter[0] && price <= pricesFilter[1]
+      );
+    }
+
+    if (searchQuery?.length > 2) {
       filteredProducts = filteredProducts.filter((product) => {
         return (
           product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -26,18 +56,18 @@ const HomePage = () => {
   };
 
   return (
-    <Container maxWidth='xl'>
+    <Container maxWidth='xl' sx={{ p: 2 }}>
       <Stack
         direction='row'
-        justifyContent='center'
-        alignItems='center'
+        justifyContent='flex-start'
+        alignItems='flex-start'
         spacing={{ xs: 1, sm: 2, md: 4 }}
         divider={<Divider orientation='vertical' flexItem />}
       >
         <Filters />
         <Grid container spacing={2}>
-          {filterProducts() && filterProducts().length ? (
-            filterProducts().map((product) => (
+          {filterProducts()?.length ? (
+            filterProducts()?.map((product) => (
               <ProductItem key={product.id} product={product} />
             ))
           ) : (

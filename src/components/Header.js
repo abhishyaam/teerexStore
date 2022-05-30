@@ -102,7 +102,10 @@ export default function Header() {
           onClick={() => navigate(toPath)}
         >
           {state && (
-            <Badge badgeContent={state.cart.length} color='error'>
+            <Badge
+              badgeContent={pathname === '' ? state?.cart?.length : 0}
+              color='error'
+            >
               {icon}
             </Badge>
           )}
@@ -115,7 +118,13 @@ export default function Header() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static'>
         <Toolbar>
-          <Typography variant='h6' noWrap component='div'>
+          <Typography
+            variant='h6'
+            noWrap
+            component='div'
+            onClick={() => navigate('/')}
+            sx={{ cursor: 'pointer' }}
+          >
             TeeRex Store
           </Typography>
           <Box sx={{ flexGrow: 1 }} />

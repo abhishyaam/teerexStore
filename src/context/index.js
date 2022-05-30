@@ -12,7 +12,6 @@ import { getFilterParams } from '../utils';
  */
 const Context = createContext({
   // state: { cart: [], products: [] },
-  // filtersState: { searchQuery: '', filterParams: {} },
 });
 
 /**
@@ -30,6 +29,9 @@ const TeeRexProvider = ({ children }) => {
   const [filtersState, filtersDispatch] = useReducer(filtersReducer, {
     searchQuery: '',
     filterParams: {},
+    colorsFilter: [],
+    gendersFilter: [],
+    typesFilter: [],
   });
 
   useEffect(() => {
@@ -57,4 +59,4 @@ const TeeRexProvider = ({ children }) => {
 
 export default TeeRexProvider;
 
-export const TeeRexState = () => useContext(Context);
+export const TeeRexState = () => useContext(Context) || {};

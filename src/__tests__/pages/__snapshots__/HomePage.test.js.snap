@@ -5,10 +5,142 @@ exports[`<HomePage /> to match snapshot 1`] = `
   class="MuiContainer-root MuiContainer-maxWidthXl css-19r6kue-MuiContainer-root"
 >
   <div
-    class="css-czq8sk-MuiStack-root"
+    class="css-4auhoz-MuiStack-root"
   >
-    <div>
-      Filters
+    <div
+      class="css-nbv7k5-MuiStack-root"
+    >
+      <div
+        class="css-nen11g-MuiStack-root"
+      >
+        <div
+          class="MuiBox-root css-qkupkn"
+          elevation="0"
+        >
+          <h6
+            class="MuiTypography-root MuiTypography-h6 css-2ulfj5-MuiTypography-root"
+          >
+            Colors
+          </h6>
+          <div
+            class="css-nen11g-MuiStack-root"
+          />
+        </div>
+        <div
+          class="MuiBox-root css-qkupkn"
+        >
+          <h6
+            class="MuiTypography-root MuiTypography-h6 css-2ulfj5-MuiTypography-root"
+          >
+            Types
+          </h6>
+          <div
+            class="css-nen11g-MuiStack-root"
+          />
+        </div>
+        <div
+          class="MuiBox-root css-qkupkn"
+        >
+          <h6
+            class="MuiTypography-root MuiTypography-h6 css-2ulfj5-MuiTypography-root"
+          >
+            Genders
+          </h6>
+          <div
+            class="css-nen11g-MuiStack-root"
+          />
+        </div>
+        <div
+          class="MuiBox-root css-1mzovj4"
+        >
+          <h6
+            class="MuiTypography-root MuiTypography-h6 css-2ulfj5-MuiTypography-root"
+          >
+            Price
+          </h6>
+          <div
+            class="css-nen11g-MuiStack-root"
+          >
+            <span
+              class="MuiSlider-colorPrimary MuiSlider-sizeMedium MuiSlider-root css-187mznn-MuiSlider-root"
+            >
+              <span
+                class="MuiSlider-rail css-14pt78w-MuiSlider-rail"
+              />
+              <span
+                class="MuiSlider-track css-1gv0vcd-MuiSlider-track"
+                style="left: 0%; width: 100%;"
+              />
+              <span
+                class="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
+                data-index="0"
+                style="left: 0%;"
+              >
+                <input
+                  aria-orientation="horizontal"
+                  aria-valuemax="500"
+                  aria-valuemin="0"
+                  aria-valuenow="0"
+                  data-index="0"
+                  max="500"
+                  min="0"
+                  step="1"
+                  style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
+                  type="range"
+                  value="0"
+                />
+                <span
+                  aria-hidden="true"
+                  class="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
+                >
+                  <span
+                    class="MuiSlider-valueLabelCircle"
+                  >
+                    <span
+                      class="MuiSlider-valueLabelLabel"
+                    >
+                      0
+                    </span>
+                  </span>
+                </span>
+              </span>
+              <span
+                class="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
+                data-index="1"
+                style="left: 100%;"
+              >
+                <input
+                  aria-orientation="horizontal"
+                  aria-valuemax="500"
+                  aria-valuemin="0"
+                  aria-valuenow="500"
+                  data-index="1"
+                  max="500"
+                  min="0"
+                  step="1"
+                  style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
+                  type="range"
+                  value="500"
+                />
+                <span
+                  aria-hidden="true"
+                  class="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
+                >
+                  <span
+                    class="MuiSlider-valueLabelCircle"
+                  >
+                    <span
+                      class="MuiSlider-valueLabelLabel"
+                    >
+                      500
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
     <hr
       class="MuiDivider-root MuiDivider-fullWidth MuiDivider-vertical MuiDivider-flexItem css-1tk1bks-MuiDivider-root"

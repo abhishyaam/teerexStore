@@ -1,30 +1,50 @@
 import React from 'react';
-import { Grid, Paper, Stack } from '@mui/material';
-import { styled } from '@mui/material/styles';
-
-const Item = styled(Paper)(({ theme }) => ({
-  cursor: 'pointer',
-  maxHeight: '150px',
-  height: '150px',
-}));
+import {
+  Box,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+} from '@mui/material';
+import ProductItemButton from './ProductItemButton';
 
 const ProductItem = ({ product }) => {
+  console.log('ProductItem1', product.id);
+
   return (
-    <Grid data-testid='test-product-item' item xs={6} sm={4} md={3} lg={2}>
-      <Item sx={{ p: 1 }}>
-        <div>{product.imageURL}</div>
-        <Stack
-          direction='row'
-          justifyContent='space-between'
-          alignItems='flex-end'
-          spacing={{ xs: 1, sm: 2, md: 4 }}
-        >
-          <div>{product.price}</div>
-          <div>{product.name}</div>
-        </Stack>
-      </Item>
+    <Grid data-testid='test-product-item' item xs={12} sm={6} md={4} lg={3}>
+      <Card sx={{ maxWidth: 345 }}>
+        <CardMedia
+          component='img'
+          sx={{ width: 151 }}
+          image={product.imageURL}
+        />
+        <CardContent>
+          <Typography gutterBottom variant='h5' component='div'>
+            {product.name}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'end',
+              width: '100%',
+            }}
+          >
+            <Typography gutterBottom variant='h6' component='div'>
+              {`${product.currency} ${product.price}`}
+            </Typography>
+            <ProductItemButton product={product} />
+          </Box>
+        </CardActions>
+      </Card>
     </Grid>
   );
 };
 
-export default ProductItem;
+export default React.memo(ProductItem);

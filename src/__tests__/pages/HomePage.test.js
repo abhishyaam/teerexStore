@@ -16,7 +16,7 @@ describe('<HomePage />', () => {
       filtersState: { searchQuery: '' },
     });
     const { getByText } = render(<HomePage />);
-    expect(getByText('Filters')).to;
+    expect(getByText('Colors')).toBeInTheDocument();
   });
 
   it('should display message loading products when there are no products to display', () => {
