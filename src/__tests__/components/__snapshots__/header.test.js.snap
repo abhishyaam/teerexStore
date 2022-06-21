@@ -11,7 +11,7 @@ exports[`<Header />  should match snapshot 1`] = `
       class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-1t29gy6-MuiToolbar-root"
     >
       <div
-        class="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-8u39c-MuiTypography-root"
+        class="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1jn0uj2-MuiTypography-root"
       >
         TeeRex Store
       </div>

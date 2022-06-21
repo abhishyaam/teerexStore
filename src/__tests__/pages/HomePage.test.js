@@ -48,7 +48,7 @@ describe('<HomePage />', () => {
     expect(queryAllByTestId('test-product-item').length).toEqual(1);
   });
 
-  it;
+  it('search ');
 
   it('to match snapshot', () => {
     TeeRexState.mockReturnValue({
