@@ -1,4 +1,4 @@
-import React, { useContext, createContext, useReducer } from 'react';
+import React, { useContext, createContext, useReducer, useState } from 'react';
 import { useEffect } from 'react';
 import { dataReducer, filtersReducer } from './reducers';
 import { POPULATE_FILTER_PARAMS, POPULATE_PRODUCTS } from './actions';
@@ -21,6 +21,8 @@ const Context = createContext({
  *
  */
 const TeeRexProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+
   const [state, dispatch] = useReducer(dataReducer, {
     products: [],
     cart: [],
@@ -50,7 +52,7 @@ const TeeRexProvider = ({ children }) => {
 
   return (
     <Context.Provider
-      value={{ state, dispatch, filtersState, filtersDispatch }}
+      value={{ user, setUser, state, dispatch, filtersState, filtersDispatch }}
     >
       {children}
     </Context.Provider>
