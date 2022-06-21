@@ -100,6 +100,7 @@ export default function Header() {
           aria-label={``}
           color='inherit'
           onClick={() => navigate(toPath)}
+          disabled={pathname === '' && state?.cart?.length === 0 ? true : false}
         >
           {state && (
             <Badge

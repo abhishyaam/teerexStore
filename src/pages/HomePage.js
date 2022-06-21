@@ -17,27 +17,34 @@ const HomePage = () => {
   } = TeeRexState();
 
   const filterProducts = () => {
+    console.log(
+      searchQuery,
+      colorsFilter,
+      typesFilter,
+      gendersFilter,
+      pricesFilter
+    );
     let filteredProducts = products;
     if (colorsFilter?.length > 0) {
-      filteredProducts = products.filter(({ color }) =>
+      filteredProducts = filteredProducts.filter(({ color }) =>
         colorsFilter.includes(color)
       );
     }
 
     if (typesFilter?.length > 0) {
-      filteredProducts = products.filter(({ type }) =>
+      filteredProducts = filteredProducts.filter(({ type }) =>
         typesFilter.includes(type)
       );
     }
 
     if (gendersFilter?.length > 0) {
-      filteredProducts = products.filter(({ gender }) =>
+      filteredProducts = filteredProducts.filter(({ gender }) =>
         gendersFilter.includes(gender)
       );
     }
 
     if (pricesFilter?.length > 0) {
-      filteredProducts = products.filter(
+      filteredProducts = filteredProducts.filter(
         ({ price }) => price >= pricesFilter[0] && price <= pricesFilter[1]
       );
     }

@@ -51,22 +51,23 @@ const ProductItemButton = ({ product }) => {
         >
           <Button
             variant='text'
-            size='medium'
-            disabled={productItem.quantity === productItem?.inCart}
-            onClick={() => updateItemQty()}
-            sx={{ fontSize: 18 }}
-          >
-            <span>+</span>
-          </Button>
-          <Box sx={{ p: 1 }}>{productItem?.inCart}</Box>
-          <Button
-            variant='text'
             disabled={productItem?.inCart === 0}
             onClick={() => updateItemQty(false)}
             size='medium'
             sx={{ fontSize: 18 }}
           >
             <span>-</span>
+          </Button>
+
+          <Box sx={{ p: 1 }}>{productItem?.inCart}</Box>
+          <Button
+            variant='text'
+            size='medium'
+            disabled={productItem.quantity === productItem?.inCart}
+            onClick={() => updateItemQty()}
+            sx={{ fontSize: 10 }}
+          >
+            <span>+</span>
           </Button>
         </ButtonGroup>
       ) : (
