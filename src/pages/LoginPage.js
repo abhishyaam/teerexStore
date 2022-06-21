@@ -7,6 +7,7 @@ const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { setUser } = TeeRexState();
+
   const handleLogin = () => {
     if (email === 'user@abc.com' && password === '1234')
       setUser({ email, password });
