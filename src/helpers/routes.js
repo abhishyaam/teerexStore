@@ -1,9 +1,20 @@
-import { Navigate, Route } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import { TeeRexState } from '../context';
 
-export function ProtectedRoute({ user, children }) {
+/**
+ *
+ * If user has not logged in any requests private/protected routes are redirected to <LoginPage/>
+ */
+export function ProtectedRoute({ children }) {
+  const { user } = TeeRexState();
   return user ? children : <Navigate to='/login' />;
 }
 
-export function UserLoggedIn({ user, children }) {
+/**
+ *
+ * If user has logged in any requests login page are redirected to <HomePage/>
+ */
+export function UserLoggedIn({ children }) {
+  const { user } = TeeRexState();
   return !user ? children : <Navigate to='/' />;
 }
