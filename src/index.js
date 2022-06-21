@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import TeeRexProvider from './context';
+import TeeRexErrorBoundary from './components/TeeRexErrorBoundary';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <TeeRexErrorBoundary>
     <TeeRexProvider>
       <App />
     </TeeRexProvider>
-  </React.StrictMode>
+  </TeeRexErrorBoundary>
 );
 
 // If you want to start measuring performance in your app, pass a function
