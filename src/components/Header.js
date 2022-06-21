@@ -57,6 +57,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Header() {
+  const protectedPaths = ['', 'cart'];
   const pathname = useLocation().pathname.split('/')[1];
   const navigate = useNavigate();
 
@@ -90,29 +91,34 @@ export default function Header() {
    *
    */
   const renderIconButton = () => {
-    const icon = pathname === '' ? <ShoppingCartIcon /> : <HomeIcon />;
-    const toPath = pathname === '' ? '/cart' : '/';
-    const tooltipText = pathname === '' ? 'Cart' : 'Home';
-    return (
-      <Tooltip title={tooltipText}>
-        <IconButton
-          size='large'
-          aria-label={``}
-          color='inherit'
-          onClick={() => navigate(toPath)}
-          disabled={pathname === '' && state?.cart?.length === 0 ? true : false}
-        >
-          {state && (
-            <Badge
-              badgeContent={pathname === '' ? state?.cart?.length : 0}
-              color='error'
-            >
-              {icon}
-            </Badge>
-          )}
-        </IconButton>
-      </Tooltip>
-    );
+    if (protectedPaths.includes(pathname)) {
+      const icon = pathname === '' ? <ShoppingCartIcon /> : <HomeIcon />;
+      const toPath = pathname === '' ? '/cart' : '/';
+      const tooltipText = pathname === '' ? 'Cart' : 'Home';
+
+      return (
+        <Tooltip title={tooltipText}>
+          <IconButton
+            size='large'
+            aria-label={``}
+            color='inherit'
+            onClick={() => navigate(toPath)}
+            disabled={
+              pathname === '' && state?.cart?.length === 0 ? true : false
+            }
+          >
+            {state && state?.cart?.length && (
+              <Badge
+                badgeContent={pathname === '' ? state?.cart?.length : 0}
+                color='error'
+              >
+                {icon}
+              </Badge>
+            )}
+          </IconButton>
+        </Tooltip>
+      );
+    }
   };
 
   return (
@@ -128,9 +134,12 @@ export default function Header() {
           >
             TeeRex Store
           </Typography>
+
           <Box sx={{ flexGrow: 1 }} />
           {pathname === '' ? renderSearchBar() : null}
+
           <Box sx={{ flexGrow: 1 }} />
+
           <Box>{renderIconButton()}</Box>
         </Toolbar>
       </AppBar>
