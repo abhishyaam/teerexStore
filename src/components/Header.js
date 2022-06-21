@@ -13,9 +13,10 @@ import {
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 import HomeIcon from '@mui/icons-material/Home';
+import LogoutIcon from '@mui/icons-material/Logout';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { TeeRexState } from '../context';
-import { FILTER_BY_SEARCH } from '../context/actions';
+import { FILTER_BY_SEARCH, CLEAR_CART } from '../context/actions';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -61,7 +62,7 @@ export default function Header() {
   const pathname = useLocation().pathname.split('/')[1];
   const navigate = useNavigate();
 
-  const { state, filtersDispatch } = TeeRexState();
+  const { state, filtersDispatch, dispatch, setUser } = TeeRexState();
   /**
    *
    * @returns searchbar if user is on the home pafe
@@ -90,37 +91,58 @@ export default function Header() {
    * Renders icon on Navbar based on the pathname
    *
    */
-  const renderIconButton = () => {
+  const renderIconButtons = () => {
     if (protectedPaths.includes(pathname)) {
       const icon = pathname === '' ? <ShoppingCartIcon /> : <HomeIcon />;
       const toPath = pathname === '' ? '/cart' : '/';
       const tooltipText = pathname === '' ? 'Cart' : 'Home';
 
       return (
-        <Tooltip title={tooltipText}>
-          <IconButton
-            size='large'
-            aria-label={``}
-            color='inherit'
-            onClick={() => navigate(toPath)}
-            disabled={
-              pathname === '' && state?.cart?.length === 0 ? true : false
-            }
-          >
-            {state && state?.cart?.length && (
-              <Badge
-                badgeContent={pathname === '' ? state?.cart?.length : 0}
-                color='error'
-              >
-                {icon}
-              </Badge>
-            )}
-          </IconButton>
-        </Tooltip>
+        <>
+          <Tooltip title={tooltipText}>
+            <IconButton
+              size='large'
+              aria-label={``}
+              color='inherit'
+              onClick={() => navigate(toPath)}
+              disabled={
+                pathname === '' && state?.cart?.length === 0 ? true : false
+              }
+            >
+              {state && (
+                <Badge
+                  badgeContent={pathname === '' ? state?.cart?.length : 0}
+                  color='error'
+                >
+                  {icon}
+                </Badge>
+              )}
+            </IconButton>
+          </Tooltip>
+
+          <Tooltip title='Logout'>
+            <IconButton
+              size='large'
+              aria-label={``}
+              color='inherit'
+              onClick={handleLogout}
+            >
+              <LogoutIcon />
+            </IconButton>
+          </Tooltip>
+        </>
       );
     }
   };
 
+  /**
+   * sets Application User to null  thus loggin an user out of the application, also clears cart
+   *
+   */
+  const handleLogout = () => {
+    setUser(null);
+    dispatch({ type: CLEAR_CART });
+  };
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static'>
@@ -140,7 +162,7 @@ export default function Header() {
 
           <Box sx={{ flexGrow: 1 }} />
 
-          <Box>{renderIconButton()}</Box>
+          <Box>{renderIconButtons()}</Box>
         </Toolbar>
       </AppBar>
     </Box>
