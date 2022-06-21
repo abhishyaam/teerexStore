@@ -6,8 +6,6 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import NotFound from './pages/NotFoundPage';
 function App() {
-  const user = {};
-
   return (
     <div>
       <BrowserRouter>
@@ -16,28 +14,31 @@ function App() {
           <Route
             path='/login'
             element={
-              <UserLoggedIn user={user}>
+              <UserLoggedIn>
                 <LoginPage />
               </UserLoggedIn>
             }
           />
+
           <Route
             path='/'
             element={
-              <ProtectedRoute user={user}>
+              <ProtectedRoute>
                 <HomePage />
               </ProtectedRoute>
             }
-          ></Route>
+          />
+
           <Route
             path='/cart'
             element={
-              <ProtectedRoute user={user}>
+              <ProtectedRoute>
                 <CartPage />
               </ProtectedRoute>
             }
-          ></Route>
-          <Route path='*' element={<NotFound />}></Route>
+          />
+
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
