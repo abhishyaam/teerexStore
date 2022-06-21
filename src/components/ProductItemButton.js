@@ -65,7 +65,7 @@ const ProductItemButton = ({ product }) => {
             size='medium'
             disabled={productItem.quantity === productItem?.inCart}
             onClick={() => updateItemQty()}
-            sx={{ fontSize: 10 }}
+            sx={{ fontSize: 16 }}
           >
             <span>+</span>
           </Button>

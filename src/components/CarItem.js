@@ -5,7 +5,7 @@ import ProductItemButton from './ProductItemButton';
 import { TeeRexState } from '../context';
 import { REMOVE_FROM_CART } from '../context/actions';
 const CarItem = ({ product }) => {
-  const { state: { cart = [] } = {}, dispatch } = TeeRexState();
+  const { dispatch } = TeeRexState();
 
   const removeFromCart = () => {
     dispatch({ type: REMOVE_FROM_CART, payload: product });
