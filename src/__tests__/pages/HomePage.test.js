@@ -25,12 +25,12 @@ describe('<HomePage />', () => {
       filtersState: { searchQuery: '' },
     });
 
-    const { queryByTestId } = render(<HomePage />);
+    render(<HomePage />);
     // console.log(render(<HomePage />))
     expect(screen.getByText('Loading products...')).toBeInTheDocument();
   });
 
-  it('should not brek when searchQuery is null', () => {
+  it('should not break when searchQuery is null', () => {
     TeeRexState.mockReturnValue({
       state: { products: mockProducts },
       filtersState: { searchQuery: null },
@@ -39,7 +39,7 @@ describe('<HomePage />', () => {
     expect(queryAllByTestId('test-product-item').length).toEqual(3);
   });
 
-  it('search should filter products', () => {
+  it('search should filter products by search word', () => {
     TeeRexState.mockReturnValue({
       state: { products: mockProducts },
       filtersState: { searchQuery: 'red' },
@@ -47,6 +47,8 @@ describe('<HomePage />', () => {
     const { queryAllByTestId } = render(<HomePage />);
     expect(queryAllByTestId('test-product-item').length).toEqual(1);
   });
+
+  it;
 
   it('to match snapshot', () => {
     TeeRexState.mockReturnValue({

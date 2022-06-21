@@ -42,7 +42,7 @@ const HomePage = () => {
       );
     }
 
-    if (searchQuery?.length > 2) {
+    if (searchQuery?.length > 0) {
       filteredProducts = filteredProducts.filter((product) => {
         return (
           product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
