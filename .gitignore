@@ -8,6 +8,8 @@
 # testing
 /coverage
 /src/__tests__/__snapshots__
+/src/__tests__/components/__snapshots__
+/src/__tests__/pages/__snapshots__
 # production
 /build
 
