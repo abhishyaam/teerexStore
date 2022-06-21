@@ -9,6 +9,7 @@ import {
   FILTER_BY_TYPE,
   FILTER_BY_COLOR,
   FILTER_BY_GENDER,
+  CLEAR_CART,
 } from '../actions';
 
 //data reducer
@@ -24,6 +25,7 @@ export const dataReducer = (state, action) => {
         }),
         cart: [...state.cart, { ...action.payload, inCart: 1 }],
       };
+
     case REMOVE_FROM_CART:
       return {
         ...state,
@@ -33,6 +35,7 @@ export const dataReducer = (state, action) => {
         }),
         cart: state.cart.filter((item) => item.id !== action.payload.id),
       };
+
     case UPDATE_ITEM_QTY:
       return {
         ...state,
@@ -53,6 +56,9 @@ export const dataReducer = (state, action) => {
         ...state,
         products: [...action.payload],
       };
+
+    case CLEAR_CART:
+      return { ...state, cart: [] };
     default:
       return state;
   }
